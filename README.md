@@ -1,2 +1,16 @@
-# hbus
-A compact interprocess communication server
+# hbus简介
+  基于unix domain socket的类似dbus的一款进程间通信服务器， 最多可以提供255个服务。
+ 
+# 特点
+1.	健壮，除非hbusd重启，否则不会丢失消息
+2.	准确，收几个消息就发几个消息，不会出现重复报文
+3.	简单，注册简单，使用简单，代码量小
+4.	安全，各种异常不会影响正常工作
+5.	快速，提供多个线程用于收发消息
+6.	心跳，提供心跳功能
+7.	自动重连功能，客户端一旦断开就会尝试重新建立连接
+8.	配置方便，通过xml进行基础的配置
+9.  依赖少，仅使用了libxml2和线程库
+
+# 涉及的技术
+uloop、 xml、 unix domain socket
